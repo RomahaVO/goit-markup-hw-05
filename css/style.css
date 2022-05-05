@@ -8,6 +8,7 @@ body {
     --title-white-color: #FFFFFF;
     --akcent-color: #2196F3;
     --silver-icon:#AFB1B8;
+    --time-trasition: 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -86,6 +87,10 @@ ul,ol {
 
 }
 
+.header-item{
+    position: relative;
+}
+
 .header-link{
     color: var(--primery-text-color);
     text-decoration: none;
@@ -95,10 +100,28 @@ ul,ol {
     
 }
 
+.header-link.current::after{
+    content: '';
+    position: absolute;
+    
+    display: block;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--akcent-color);
+    left:0px;
+    bottom: -32px;
+
+
+
+}
+
 .header-link:hover,
 .header-link:focus{
     color: var(--akcent-color);
     cursor: pointer;
+    transform:  color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -134,6 +157,7 @@ ul,ol {
 .header-link-text:focus{
     color: var(--akcent-color);
     cursor: pointer;
+    transition:  color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link-tel{
@@ -311,10 +335,34 @@ ul,ol {
     display: flex;
     flex-basis:calc(100%/3 - 30px);
     margin-right: 30px;
+
+    position: relative;
 }
 
 .about-item:last-child{
     margin-right: 0;
+}
+
+.about-item-text{
+    display: inline-block;
+    position: absolute;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    text-align: center;
+
+    width: 100%;
+    max-height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+    color: var(--title-white-color);
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    left: 0px;
+    bottom: 0px;
 }
 
 
@@ -408,8 +456,10 @@ ul,ol {
 
 .team-socs-link:hover,
 .team-socs-link:focus{
-    background: var(--akcent-color);
+    background-color: var(--akcent-color);
     fill: var(--title-white-color);
+    transition:  fill 250ms linear cubic-bezier(0.4, 0, 0.2, 1),   
+    background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-socs-icon{
@@ -468,6 +518,7 @@ ul,ol {
 .client-link:focus{
     border-color: var(--akcent-color);
     fill: var(--akcent-color);
+    transition: border-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1), fill 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icon{
@@ -603,6 +654,7 @@ ul,ol {
 .footer-link-icon:hover,
 .footer-link-icon:focus{
     background-color:var(--akcent-color);
+    transition: background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon{
@@ -644,10 +696,27 @@ ul,ol {
 
 }
 
+
+
+.header-link-portfolio.current::after{
+    display: block;
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 4px;    
+    border-radius: 2px;
+    background-color: var(--akcent-color);
+
+    left: 0px;
+    bottom: -32px;
+}
+
 .header-link-portfolio:hover,
 .header-link-portfolio:focus{
     color: var(--akcent-color);
     cursor: pointer;
+    transition: color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link-portfolio.current{
@@ -668,6 +737,7 @@ ul,ol {
 .header-tel-portfolio:hover,
 .header-tel-portfolio:focus{
     color: var(--akcent-color);
+    transition: color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-tel-portfolio{
@@ -703,10 +773,11 @@ ul,ol {
 
 .hero-button-portfolio:hover,
 .hero-button-portfolio:focus{
-    background: var(--akcent-color);
+    background-color: var(--akcent-color);
     color:var(--title-white-color);
     cursor: pointer;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition:  background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms linear cubic-bezier(0.4, 0, 0.2, 1), color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button-portfolio-acent{  
@@ -730,6 +801,7 @@ ul,ol {
     background-color: var(--title-white-color);
     color: var(--akcent-color);
     cursor: pointer;
+    transition: background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1), color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list{
@@ -763,6 +835,7 @@ ul,ol {
 .portfolio-list-item:hover{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     cursor: pointer;
+    transition: box-shadow 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-text-block{
