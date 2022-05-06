@@ -185,7 +185,7 @@ ul,ol {
 .hero{
     background-color: #2F303A;
     text-align: center;
-    height: 600px;
+    /* height: 600px; */
     max-width: 1600px;
 
     padding-top: 200px;
@@ -891,29 +891,51 @@ ul,ol {
     letter-spacing: 0.03em;
 }
 
+/* -------------------------------- backdrop --------------------------- */
+
 
 .backdrop{
     position: fixed;
-    /* top: 0; */
+    top: 0;
     width: 100%;
-    height: 1000%;
+    min-height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 
 }
 
 .modal{
+    position: absolute;
     width: 528px;
     min-height: 581px;
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 4px;
-    background-color:rgba(255, 255, 255, 1);
- 
 
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-        margin: 0;
 
+
+
+}
+
+.icon-close-btn{
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primery-text-color);
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+
+}
+
+.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 
