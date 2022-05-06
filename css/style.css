@@ -8,7 +8,7 @@ body {
     --title-white-color: #FFFFFF;
     --akcent-color: #2196F3;
     --silver-icon:#AFB1B8;
-    --time-trasition: 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    --timing-function-trasition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -121,7 +121,7 @@ ul,ol {
 .header-link:focus{
     color: var(--akcent-color);
     cursor: pointer;
-    transform:  color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transform:  color var(--timing-function-trasition);
     
 }
 
@@ -157,7 +157,7 @@ ul,ol {
 .header-link-text:focus{
     color: var(--akcent-color);
     cursor: pointer;
-    transition:  color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition:  color var(--timing-function-trasition);
 }
 
 .header-link-tel{
@@ -319,7 +319,7 @@ ul,ol {
     letter-spacing: 0.03em;
 }
 
-/*Чим ми займаємся*/
+/*-------------------------------- about ---------------------------*/
 
 .section-third{
     padding-bottom: 94px;
@@ -342,6 +342,10 @@ ul,ol {
 .about-item:last-child{
     margin-right: 0;
 }
+
+/* .about-item-thumb{
+    position: relative;
+} */
 
 .about-item-text{
     display: inline-block;
@@ -458,8 +462,8 @@ ul,ol {
 .team-socs-link:focus{
     background-color: var(--akcent-color);
     fill: var(--title-white-color);
-    transition:  fill 250ms linear cubic-bezier(0.4, 0, 0.2, 1),   
-    background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition:  fill var(--timing-function-trasition),   
+    background-color var(--timing-function-trasition);
 }
 
 .team-socs-icon{
@@ -518,7 +522,7 @@ ul,ol {
 .client-link:focus{
     border-color: var(--akcent-color);
     fill: var(--akcent-color);
-    transition: border-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1), fill 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--timing-function-trasition), fill var(--timing-function-trasition);
 }
 
 .client-icon{
@@ -654,7 +658,7 @@ ul,ol {
 .footer-link-icon:hover,
 .footer-link-icon:focus{
     background-color:var(--akcent-color);
-    transition: background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--timing-function-trasition);
 }
 
 .footer-icon{
@@ -716,7 +720,7 @@ ul,ol {
 .header-link-portfolio:focus{
     color: var(--akcent-color);
     cursor: pointer;
-    transition: color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--timing-function-trasition);
 }
 
 .header-link-portfolio.current{
@@ -737,7 +741,7 @@ ul,ol {
 .header-tel-portfolio:hover,
 .header-tel-portfolio:focus{
     color: var(--akcent-color);
-    transition: color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--timing-function-trasition);
 }
 
 .header-tel-portfolio{
@@ -777,7 +781,7 @@ ul,ol {
     color:var(--title-white-color);
     cursor: pointer;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    transition:  background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms linear cubic-bezier(0.4, 0, 0.2, 1), color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition:  background-color var(--timing-function-trasition), box-shadow var(--timing-function-trasition), color var(--timing-function-trasition);
 }
 
 .hero-button-portfolio-acent{  
@@ -801,7 +805,7 @@ ul,ol {
     background-color: var(--title-white-color);
     color: var(--akcent-color);
     cursor: pointer;
-    transition: background-color 250ms linear cubic-bezier(0.4, 0, 0.2, 1), color 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--timing-function-trasition), color var(--timing-function-trasition);
 }
 
 .portfolio-list{
@@ -837,11 +841,7 @@ ul,ol {
 .portfolio-list-item:hover{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     cursor: pointer;
-    transition: box-shadow 250ms linear cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-list-item:hover .portfolio-top-text{
-    transform: translateY(0%);
+    transition: box-shadow var(--timing-function-trasition);
 }
 
 .portfolio-wrap{
@@ -851,7 +851,6 @@ ul,ol {
 
 .portfolio-top-text{
     position: absolute;
-
 
     height: 100%;
     top: 0;
@@ -864,8 +863,11 @@ ul,ol {
     color: var(--title-white-color);
 
     transform: translateY(100%);
-    transition: transform 250ms linear;
+    transition: transform var(--timing-function-trasition);
+}
 
+.portfolio-list-item:hover .portfolio-top-text{
+    transform: translateY(0%);
 }
 
 .portfolio-text-block{
@@ -913,9 +915,11 @@ ul,ol {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: opacity var(--timing-function-trasition), visibility var(--timing-function-trasition);
 
+}
 
-
+.backdrop .is-hidden .modal{
 
 }
 
