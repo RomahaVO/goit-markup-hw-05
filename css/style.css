@@ -902,10 +902,17 @@ ul,ol {
     width: 100%;
     min-height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity var(--timing-function-trasition), visibility var(--timing-function-trasition);
 
 }
 
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform var(--timing-function-trasition), opacity var(--timing-function-trasition), visibility var(--timing-function-trasition);
+}
+
 .modal{
+
     position: absolute;
     width: 528px;
     min-height: 581px;
@@ -914,14 +921,13 @@ ul,ol {
 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity var(--timing-function-trasition), visibility var(--timing-function-trasition);
+    transform: translate(-50%, -50%) scale(1) ;
+    transition: transform var(--timing-function-trasition), opacity var(--timing-function-trasition), visibility var(--timing-function-trasition);
+    opacity: 1;
 
 }
 
-.backdrop .is-hidden .modal{
 
-}
 
 .icon-close-btn{
     width: 30px;
